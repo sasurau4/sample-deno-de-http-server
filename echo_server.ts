@@ -6,6 +6,8 @@ async function main() {
   const buffer = new Uint8Array(1024);
 
   const { eof, nread } = await conn.read(buffer);
+  console.log(eof);
+  console.log(nread);
 
   await conn.write(buffer.slice(0, nread));
 
